@@ -1,1 +1,9 @@
 
+services:
+  prediction-api:
+    image: zobiaa11/lab6-linear-regression:latest
+    container_name: lab6-prediction-api
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+
