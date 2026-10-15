@@ -1,5 +1,3 @@
-
-
 from flask import Flask, request, jsonify
 import random
 import math
@@ -7,8 +5,9 @@ import math
 app = Flask(__name__)
 
 STUDENT_ROLL_NUMBER = "FA23-BDS-046"
+SEED = 46
 
-random.seed(STUDENT_ROLL_NUMBER)
+random.seed(SEED)
 a1 = random.uniform(-5, 5)
 a2 = random.uniform(-5, 5)
 a3 = random.uniform(-5, 5)
@@ -42,7 +41,7 @@ def predict():
 
     return jsonify({
         "registration_number": STUDENT_ROLL_NUMBER,
-        "prediction": round(y, 6)
+        "prediction": round(y, 2)
     })
 
 
